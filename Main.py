@@ -31,9 +31,8 @@ def switch(formula, repetition):
             print("Result = " + str(result))
 
         elif formula == "2":
-            n = int(input("n = "))
             k = int(input("k = "))
-            result = Formulas.rep_permutation(n, k)
+            result = Formulas.rep_permutation(k)
             print("Result = " + str(result))
 
         elif formula == "3":

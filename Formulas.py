@@ -5,11 +5,14 @@ import math
 
 # Placement
 def placement(n, k):
-    numerator = do_factorial(n)
-    denominator = do_factorial((n - k))
-    result = numerator / denominator
+    if n >= k:
+        numerator = do_factorial(n)
+        denominator = do_factorial((n - k))
+        result = numerator / denominator
+        return result
+    else :
+        print("The probability os negative! that's impossible!")
 
-    return result
 
 
 # Permutation
@@ -39,11 +42,20 @@ def rep_placement(n, k):
 
 
 # Permutation
-def rep_permutation(n, k):
+def rep_permutation(k):
+    nominator = 1
     denominator = 1
-    for i in k:
-        denominator *= do_factorial(i)
-    return do_factorial(n) // denominator
+
+    i = 1
+    while i <= k:
+        n = int(input("Enter n : "))
+        denominator *= do_factorial(n)
+        nominator += n
+        i += 1
+
+    final_nom = do_factorial(nominator)
+    result = final_nom // denominator
+    return result
 
 
 # Combination
